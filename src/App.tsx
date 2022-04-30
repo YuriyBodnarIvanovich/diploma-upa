@@ -1,24 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Menu } from './components/Menu';
+import { Content } from './components/Content';
+import RichTextEditor from './components/RichTextEditor';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div style={{width: '100%', maxWidth: '1440px'}}>
+        <Menu/>
+        {/* <Content/> */}
+        <RichTextEditor/>
+      </div>
     </div>
   );
 }
