@@ -11,7 +11,7 @@ const RichTextEditor = () => {
 
     const [ dataText, setDataText ] = useState<IDataText[]>([]);
     const [ addNewItem, setNewItem ] = useState<IEditMode>({type: 'text', status: false});
-
+    
     return(
         <RichTextEditorWrapper>
             <ToolsAdmin addNewItem={addNewItem} setNewItem={setNewItem}/>
@@ -24,7 +24,7 @@ const RichTextEditor = () => {
             }
             {
                 addNewItem.status && addNewItem.type === 'list' && (
-                    <ListCreation dataText={dataText} setDataText={setDataText} setNewItem={setNewItem}/>
+                    <ListCreation dataText={dataText} setDataText={setDataText} setNewItem={setNewItem} typeList={addNewItem.typeList}/>
                 )
             }
             {

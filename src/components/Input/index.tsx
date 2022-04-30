@@ -17,7 +17,11 @@ const InputComponent:React.FC<InputProps> = ({
   onChange,
   sumbit,
   id,
-  colorLabel
+  colorLabel,
+  type,
+  bold,
+  italic,
+  fontSize,
 }) => {
   const [ activate, setActivate ] = useState(false);
   const margin = value ? '14px 40px 0 42px' : '40px 40px 0 56px';
@@ -37,6 +41,7 @@ const InputComponent:React.FC<InputProps> = ({
           $width={$width} 
           $height={$height} 
           $border={$border} 
+          type={type}
           $bottomborder={$bottomborder}
           $margin={$margin}
           error={(activate || sumbit) && error}
@@ -44,6 +49,9 @@ const InputComponent:React.FC<InputProps> = ({
           onChange={onChange}
           placeholder={$placeholder}
           id={id}
+          bold={bold}
+          italic={italic}
+          fontSize={fontSize}
         />
         {(activate || sumbit ) && error && (
           <TextComponet

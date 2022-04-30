@@ -3,19 +3,16 @@ import { TextComponet } from "../Text";
 import { CheckBoxStyled, CheckBoxWrapper, InputBox } from "./styled";
 import { ICheckBoxCompoent } from "./types";
 
-const CheckBox:React.FC<ICheckBoxCompoent> = ({ answerId, text, handleSetIdAnswer, activeItem }) => {
-    const handleChange = () => {
-        handleSetIdAnswer(answerId, !activeItem);
-    }
+const CheckBox:React.FC<ICheckBoxCompoent> = ({ text, activeItem, setStatus }) => {
 
-
+    const handleStatus = () =>  setStatus(!activeItem); 
     return(
-        <CheckBoxWrapper active={activeItem} mainColor={'red'}>
+        <CheckBoxWrapper active={activeItem}>
             <InputBox>
-                <CheckBoxStyled type='checkbox' checked={activeItem} onClick={handleChange}
-                defaultChecked={ activeItem } /> 
+                <CheckBoxStyled type='checkbox' checked={activeItem}
+                defaultChecked={ activeItem } onChange={handleStatus}/> 
             </InputBox>
-            <TextComponet $fontWeight="500" $fontSize="16px" $color={'red'} $margin="0 0 0 9px">
+            <TextComponet $fontWeight="500" $fontSize="16px" $color={'black'} $margin="0 0 0 9px">
                 {text}   
             </TextComponet>
         </CheckBoxWrapper>

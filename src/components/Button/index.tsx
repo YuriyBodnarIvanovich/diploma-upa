@@ -18,7 +18,8 @@ const ButtonComponent: React.FC<IButtonComponent> = ({
     $position,
     $bottom,
     $disabled,
-    $background}) => {
+    $background,
+    $margin}) => {
     return(
         <ButtonStyled
          onClick={onClick} 
@@ -26,6 +27,7 @@ const ButtonComponent: React.FC<IButtonComponent> = ({
          mainButton={mainButton}
          $width={$width}
          $height={$height}
+         $margin={$margin}
          $borderRadius={$borderRadius}
          $borderRadiusBottomLeft={$borderRadiusBottomLeft}
          $borderRadiusBottomRight={$borderRadiusBottomRight}

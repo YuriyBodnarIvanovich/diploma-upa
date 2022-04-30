@@ -15,4 +15,5 @@ export interface IButtonComponent {
     $bottom?: string;
     $disabled?: boolean;
     children: string;
+    $margin?: string;
 }

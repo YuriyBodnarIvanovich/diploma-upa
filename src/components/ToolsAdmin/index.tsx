@@ -13,7 +13,7 @@ const ToolsAdmin = ({ addNewItem, setNewItem }) => {
     const handleActiveList = (typeList: IEditMode['typeList']) => {
         return () => {
             setDropDownList(false);
-            !addNewItem.status && setNewItem({type: 'list', status: true});
+            !addNewItem.status && setNewItem({type: 'list', status: true, typeList: typeList});
         }
     }
 

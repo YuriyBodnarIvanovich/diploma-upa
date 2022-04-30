@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { InputProps, ITextarea } from "./types";
+import { ITextarea } from "./types";
 
 export const InputWrapper = styled.div`
     display: flex;
@@ -26,4 +26,7 @@ export const InputStyle = styled.textarea<ITextarea>`
     }
     z-index: 1;
     resize: none;
+    ${({bold}) => bold && 'font-weight:bold;'}
+    ${({italic}) => italic && 'font-style: italic;'}
+    ${({fontSize}) => fontSize && `font-size:${fontSize}px;`}
 `;

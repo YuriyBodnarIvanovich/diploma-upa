@@ -23,5 +23,7 @@ export const ButtonStyled = styled.button<IButtonComponent>`
     text-transform: uppercase;
     color: ${({$color}) => $color ?? '#FFFFFF'};
     cursor: pointer;
+    margin: ${({$margin}) => $margin && $margin};
+    box-sizing: border-box;
 
 `;

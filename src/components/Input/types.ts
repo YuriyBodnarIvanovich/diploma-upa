@@ -1,9 +1,9 @@
-import type { ChangeEvent, HTMLAttributes, FocusEvent } from "react";
+import type { FocusEvent } from "react";
 
 export interface InputProps {
 	onChange?: any;
 	onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
-
+	type?: string;
 	name: string;
 	$width?: string;
 	$height?: string;
@@ -17,7 +17,9 @@ export interface InputProps {
 	sumbit?: boolean;
 	id?: string;
 	colorLabel?: string;
-
+	bold?: boolean;
+	italic?: boolean;
+	fontSize?: number;
 }
 
 export interface ITextarea {
@@ -25,6 +27,7 @@ export interface ITextarea {
 	$width?: string;
 	$height?: string;
 	$border?: string;
+	type?: string;
 	$bottomborder?: string;
     $placeholder?: string;
 	$margin?: string; 
@@ -34,6 +37,9 @@ export interface ITextarea {
 	sumbit?: boolean;
 	id?: string;
 	colorLabel?: string;
+	bold?: boolean;
+	italic?: boolean;
+	fontSize?: number;
 }
 
 export interface IInputWrapper {
