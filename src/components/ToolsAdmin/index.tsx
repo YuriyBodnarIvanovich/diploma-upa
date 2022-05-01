@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IEditMode } from "../RichTextEditor/types";
 import { ToolsAdminWrapper, ToolsBox, TextButton, ListButton, ListDropDown, DropDownWrapper } from "./styled";
 
-const ToolsAdmin = ({ addNewItem, setNewItem }) => {
+const ToolsAdmin = ({ addNewItem, setNewItem, setDataText }) => {
     const [ dropDownList, setDropDownList ] = useState<boolean>(false);
 
     const handleActiveMode = (type: IEditMode['type']) => {
@@ -13,6 +13,7 @@ const ToolsAdmin = ({ addNewItem, setNewItem }) => {
     const handleActiveList = (typeList: IEditMode['typeList']) => {
         return () => {
             setDropDownList(false);
+            !addNewItem.status && setDataText(prev => [...prev, {type: 'list', value: '', title: '', style: {typeList: typeList}}]);
             !addNewItem.status && setNewItem({type: 'list', status: true, typeList: typeList});
         }
     }

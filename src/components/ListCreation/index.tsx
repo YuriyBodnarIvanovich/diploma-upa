@@ -38,7 +38,9 @@ const ListCreation  = ({ dataText, setDataText, setNewItem, typeList}) => {
     const handleEndList = () =>  setNewItem(prev => ({...prev,status: false }));
 
     const handleAddNewItemTitle = () => {
-        setDataText(prev => ([...prev, {type:'list', value: '', title: listOption, style:{...prev.style, typeList: typeList }}]));
+        const data = JSON.parse(JSON.stringify(dataText));
+        data[data.length - 1] = {...data[data.length - 1], title: listOption}
+        setDataText(data);
         setListOption('');
     }
     const condition = dataText[dataText.length - 1]?.title;

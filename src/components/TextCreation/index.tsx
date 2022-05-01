@@ -9,7 +9,8 @@ import {
     InputWrapper, 
     PostionBox, 
     ToolsWrapper, 
-    FontSizeInput
+    FontSizeInput,
+    LinkInput
 } from "./styled";
 
 
@@ -20,6 +21,8 @@ const TextCreation = ({ setDataText, setNewItem }) => {
     const [ boldStatus, setBoldStatus ] = useState<boolean>(false);
     const [ italicStatus, setItalicStatus ] = useState<boolean>(false);
     const [ newLine, setNewLine ] = useState<boolean>(false);
+    const [ linkStatus, setLinkStatus ] = useState<boolean>(false);
+    const [ textLink, setTextLink ] = useState<string>('');
 
     const handleAddNewItemText  = () => {
         const textValue: IDataText = {
@@ -30,8 +33,13 @@ const TextCreation = ({ setDataText, setNewItem }) => {
                 fontSize: `${fontSize}px`,
                 italic: italicStatus,
                 newLine:  newLine
-            }
+            },
+            types: {}
         };
+        if(textValue.types && linkStatus){
+            textValue.types.typeText = 'link';
+            textValue.href = textLink;
+        }
         text !== '' && setDataText(prev => [...prev, textValue]);
         setText('');
     }
@@ -41,6 +49,8 @@ const TextCreation = ({ setDataText, setNewItem }) => {
     const handleAdittionalTools = () => setAdditionalTools(prev => !prev);
 
     const handleChangeSize= (e) => setFontSize(e.target.value);
+
+    const handleLink = (e) => setTextLink(e.target.value);
 
     return(
         <TextWrapper>
@@ -62,9 +72,15 @@ const TextCreation = ({ setDataText, setNewItem }) => {
                         <CheckBox  
                             answerId={'newLine'} 
                             text={'set new line'} 
-                            activeItem={newLine} 
+                            activeItem={newLine}
                             setStatus={setNewLine}/>
-                        <FontSizeInput>
+                        <CheckBox  
+                            answerId={'link'} 
+                            text={'create link'} 
+                            activeItem={linkStatus} 
+                            setStatus={setLinkStatus}/>
+                        <LinkInput value={textLink} onChange={handleLink} type='text'/>
+                        <FontSizeInput $width="80px" $height="30px">
                             <input value={fontSize} onChange={handleChangeSize} type='number'/>
                             <span>px</span>
                         </FontSizeInput>

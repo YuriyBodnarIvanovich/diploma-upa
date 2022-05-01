@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IBoxInput } from "./types";
 
 export const TextWrapper = styled.div`
     min-width: 600px;
@@ -29,32 +30,35 @@ export const PostionBox = styled.div`
 `;
 
 export const ToolsWrapper = styled.div`
-    width: 100px;
+    width: 150px;
     height: 344px;
     display: flex;
-    padding-top: 100px;
+    padding-top: 20px;
     flex-direction: column;
     margin-right: 20px;
-    overflow-y: hidden;
     box-sizing: border-box;
 `;
 
-export const FontSizeInput = styled.div`
-    width: 80px;
-    height: 30px;
+export const FontSizeInput = styled.div<IBoxInput>`
+    width: ${({$width}) => $width};
+    height: ${({$height}) => $height};
     display: flex;
     margin-top:20px;
-
     input {
         width: 40px;
         height: 30px;
         border: 2px solid black;
         font-size: 16px;
-
     }
-    
     span{
         display: block;
         margin: 6px 0 0 10px;
     }
+`;
+
+export const LinkInput = styled.input`
+    width: 100%;
+    height: 30px;
+    border: 1 px slid black;
+    margin-top: 10px;
 `;

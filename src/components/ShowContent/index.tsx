@@ -43,20 +43,29 @@ const ShowContent = ({ dataText }) => {
         return {...styles};  
     }
 
+    const newLineOrSpace = (newLine: boolean) => newLine ? (<br/>) : (<span>&nbsp;</span>);
+
+    const generateText = (item) => {
+        if(item.types?.typeText === 'link'){
+            return (
+                <a style={convertTextStyle(item.style)} href={`${item.href}`} target="_blank">
+                    {newLineOrSpace(item?.style?.newLine)}{`${item.value}`}
+                </a>
+            )
+        }
+        return (
+            <span style={convertTextStyle(item.style)}>
+                {newLineOrSpace(item?.style?.newLine)}{`${item.value}`}
+            </span>
+        )
+    }
+
     return(
         <ContentWrapper>
              {
                 dataText.map((item) => {
                     if(item.type === 'text'){   
-                        if(item?.style?.newLine){
-                            return(
-                                (<span style={convertTextStyle(item.style)}><br/>{`${item.value}`}</span>)
-                            )
-                        }else{
-                            return(
-                                <span style={convertTextStyle(item.style)}>&nbsp;{ `${item.value}`}</span>
-                            )
-                        }
+                        return generateText(item);
                     }
 
                     if(item.type === 'list'){
@@ -89,7 +98,6 @@ const ShowContent = ({ dataText }) => {
                             </>
                         )
                     }
-                    
                     if(item.type === 'img'){
                         return <img src={`${item.value}`} />
                     }

@@ -2,7 +2,14 @@ export interface IDataText {
     type: 'text' | 'list' | 'img',
     value: string,
     title?: string,
-    style?: IStyleData,    
+    href?: string,
+    style?: IStyleData,
+    types?: ITypesData,
+}
+
+interface ITypesData {
+    typeText?: 'link',
+    typeList?: 'numbers' | 'emptyPoint' | 'point',
 }
 
 export interface IStyleData {
