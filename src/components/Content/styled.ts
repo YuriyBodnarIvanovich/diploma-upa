@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 export const ContentWrapper = styled.div`
     width: 100%;
-    max-width: 1400px;
     height: auto;  
-    padding: 30px 40px 30px 40px;
 `;
 
 export const Title = styled.h1`
@@ -17,37 +15,38 @@ export const Title = styled.h1`
 
 export const InfoWrapper = styled.div`
     width: 100%;
+    height: 75vh;
+    background: white;
+    margin-top: 25px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 30px 30px 30px 30px;
     display: flex;
-    justify-content: space-between;
-    padding-top: 25px;
 `;
 
 export const MainEvents = styled.div`
-    width: 400px;
-    height: 800px;
+    width: 700px;
+    height: 71vh;
     background: rgba(255, 255, 255, .8);
-    // box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    border: 0.5px solid black;
     box-sizing: border-box;
-    padding: 15px;
+    padding: 2px;
+    overflow: scroll;
+
 `;
 
 export const PostsWrapper = styled.div`
-    width: 460px;
-    margin-left: 25px;
-    height: 800px;
+    width: 600px;
+    height: 71vh;
     overflow: scroll;
-
+    padding: 3px;
     div:last-child{
         margin-bottom: 0;
     }
-
-
+    margin-left: 40px;
 `;
 
 export const PostsBox = styled.div`
-    width: 450px;
+    width: 100%;
     height: 200px;
     margin-bottom: 15px;
     background: rgba(255, 255, 255, .8);
@@ -63,9 +62,18 @@ export const PostPeopleBox = styled.div`
     height: 200px;
     margin-bottom: 15px;
     background: rgba(255, 255, 255, .8);
-    // box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
     border: 0.5px solid black;
     border-radius: 10px;
+`;
 
-
+export const BottomTools = styled.div`
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    bottom: 0;
+    background-image: linear-gradient(114.67196031231879deg, rgba(243, 249, 108,1) 5.736111111111111%,rgba(210, 173, 25,1) 96.29166666666666%);
+    z-index: 1;
+    left: 0;
+    box-shadow: 0px 8px 24px rgba(52, 54, 67, 0.2);
+    displya: flex;
 `;

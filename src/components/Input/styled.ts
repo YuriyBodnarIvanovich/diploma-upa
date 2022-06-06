@@ -15,7 +15,7 @@ export const InputStyle = styled.textarea<ITextarea>`
     margin: ${({$margin}) => $margin};
     -webkit-appearance: none;
     ${({ error }) => error &&  `border-bottom: 2px solid red`};    
-    
+    background-color: rgba(255, 0, 0, 0);
     &:-webkit-autofill,
     &:-webkit-autofill:hover, 
     &:-webkit-autofill:focus {

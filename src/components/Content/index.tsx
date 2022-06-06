@@ -1,31 +1,50 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { AppState } from '../../redux/store';
 import { Footer } from '../Footer';
 import { RangeComponent } from '../Range';
-import { ContentWrapper, InfoWrapper, MainEvents, PostPeopleBox, PostsBox, PostsWrapper, Title } from './styled';
+import PostBox from './PostBox/index';
+import { BottomTools, ContentWrapper, InfoWrapper, MainEvents, PostPeopleBox, PostsBox, PostsWrapper, Title } from './styled';
 
 
 export const Content = () => {
     const [ yearRange, setYearRange ] = useState<number>(1917)
-    const postsData = [{}, {}, {}, {}, {}];
-    const postsPeopleData = [{}, {}, {}, {}, {}];
+    const postsData = useSelector((state:AppState) => state.postCatalogReducer.catalogPostData);
+    const peopleData = useSelector((state:AppState) => state.postCatalogReducer.catalogPeople);
+    const secondPostData = useSelector((state:AppState) => state.postCatalogReducer.catalogPostData);
+
+
     return(
         <ContentWrapper>
-            <Title>{yearRange}</Title>
-            <RangeComponent changeRange={setYearRange} yearRange={yearRange}/>
             <InfoWrapper>
                 <MainEvents>
-                    Main Events
+                    {postsData.map((item) => (
+                        <PostBox 
+                            id={item.id}
+                            img={item.image} 
+                            title={item.title} 
+                            from={item.dataYearFrom} 
+                            to={item.dataYearTo}
+                        />
+                    ))}
                 </MainEvents>
                 <PostsWrapper>
-                    {postsData.map((item) => <PostsBox />)}
-                </PostsWrapper>
-                <PostsWrapper>
-                    {postsPeopleData.map((item) => <PostPeopleBox />)}
+                    {peopleData.map((item) => (
+                         <PostBox 
+                         id={item.id}
+                         img={item.image} 
+                         title={item.title} 
+                         from={item.dataYearFrom} 
+                         to={item.dataYearTo}
+                     />
+                    ))}
                 </PostsWrapper>
             </InfoWrapper>
+            <BottomTools>
+                <Title>{yearRange}</Title>
+                <RangeComponent changeRange={setYearRange} yearRange={yearRange}/>
+            </BottomTools>
             <Footer/>
-           
-
         </ContentWrapper>
     )
 }

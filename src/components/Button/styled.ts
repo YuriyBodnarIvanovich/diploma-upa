@@ -11,8 +11,9 @@ export const ButtonStyled = styled.button<IButtonComponent>`
     outline: none;
     border: ${({$border}) => $border ?? 'none'};
     position: ${({$position}) => $position };
-    bottom: ${({$bottom}) => $bottom};
     bottom: 0px;
+    bottom: ${({$bottom}) => $bottom};
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: ${({$fontWeidth}) => $fontWeidth ?? '700'};

@@ -24,7 +24,7 @@ const InputComponent:React.FC<InputProps> = ({
   fontSize,
 }) => {
   const [ activate, setActivate ] = useState(false);
-  const margin = value ? '14px 40px 0 42px' : '40px 40px 0 56px';
+  const margin = value ? '22px 40px 0 42px' : '100px 0px 0 106px;';
 
 
   return(
@@ -32,7 +32,7 @@ const InputComponent:React.FC<InputProps> = ({
         <TextComponet
           $margin={margin} 
           $color={colorLabel} 
-          $fontSize="12px"
+          $fontSize={`${fontSize}px`}
           $postion={'absolute'}>
           {$placeholder || ''}
         </TextComponet>
@@ -47,7 +47,6 @@ const InputComponent:React.FC<InputProps> = ({
           error={(activate || sumbit) && error}
           value={value}
           onChange={onChange}
-          placeholder={$placeholder}
           id={id}
           bold={bold}
           italic={italic}

@@ -5,17 +5,32 @@ import ShowContent from "../ShowContent";
 import TextCreation from "../TextCreation";
 import ToolsAdmin from "../ToolsAdmin";
 import { IDataText, IEditMode } from "./types";
-import { RichTextEditorWrapper } from "./styled";
+import { RichTextEditorWrapper, SaveButton } from "./styled";
+import ButtonComponent from "../Button";
+import { useDispatch } from "react-redux";
+import { setInitialDataText } from '../../redux/slices/createPostSlice';
+import { useHistory } from "react-router-dom";
 
 const RichTextEditor = () => {
 
     const [ dataText, setDataText ] = useState<IDataText[]>([]);
     const [ addNewItem, setNewItem ] = useState<IEditMode>({type: 'text', status: false});
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+
+
+    const handleSave = () => {
+        dispatch(setInitialDataText(dataText));
+        history.push('/')
+
+    };
+    
 
     return(
         <RichTextEditorWrapper>
             <ToolsAdmin addNewItem={addNewItem} setNewItem={setNewItem} setDataText={setDataText}/>
-            {dataText.length > 0 && (<ShowContent dataText={dataText}/>)}
+            <ShowContent dataText={dataText}/>
           <div style={{padding:'60px 40px 30px 40px'}}>
             {
                 addNewItem.status && addNewItem.type === 'text' && (
@@ -33,6 +48,22 @@ const RichTextEditor = () => {
                 )
             }
           </div>
+          {
+              dataText.length > 0 && (
+                <ButtonComponent
+                    $width={'200px'}
+                    $height={'60px'}
+                    $background={'#F27A26'}
+                    $color={'white'}
+                    $border={'40px'}
+                    $borderRadius={'15px'}
+                    $position={'fixed'}
+                    $bottom={'40px'}
+                    onClick={handleSave}
+                >Save</ButtonComponent>
+              )
+          }
+         
         </RichTextEditorWrapper>
     )
 }

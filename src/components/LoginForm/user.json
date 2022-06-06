@@ -1,0 +1,24 @@
+{
+    "created_at": "2022-04-12T08:24:07.713Z",
+    "email": "urabodnargood@gmail.com",
+    "email_verified": false,
+    "identities": [
+        {
+            "user_id": "6030c72783fa6f00749b8dd2",
+            "provider": "auth0",
+            "connection": "Username-Password-Authentication",
+            "isSocial": false
+        }
+    ],
+    "name": "urabodnargood@gmail.com",
+    "nickname": "urabodnargood",
+    "picture": "https://s.gravatar.com/avatar/1b0a9401c1d23384b082a079d590b1d1?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fur.png",
+    "updated_at": "2021-11-11T17:06:31.726Z",
+    "user_id": "auth0|6030c72783fa6f00749b8dd2",
+    "username": "testyurii",
+    "last_ip": "176.121.8.98",
+    "last_login": "2022-05-27T17:06:31.725Z",
+    "logins_count": 50,
+    "blocked_for": [],
+    "guardian_authenticators": []
+}

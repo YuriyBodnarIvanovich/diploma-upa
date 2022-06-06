@@ -2,8 +2,9 @@
 .App {
   width: 100%;
   height: auto;
-  background: white;
+  background-image:linear-gradient(114.67196031231879deg, rgba(48, 245, 251,1) 5.736111111111111%,rgba(10, 56, 79,1) 96.29166666666666%);
   display: flex;
   /* flex-direction: column; */
   justify-content: center;
+  /* margin: auto; */
 }

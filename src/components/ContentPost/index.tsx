@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { IStyleData, StyleText } from "../RichTextEditor/types";
+import { IDataText, IStyleData, StyleText } from "../RichTextEditor/types";
 import { AppState } from '../../redux/store';
+import {useParams} from "react-router-dom";
 
 import { 
     ContentWrapper, 
@@ -9,23 +10,20 @@ import {
     TitleWrapper
 } from "./styled";
 
-const ShowContent = ({ dataText }) => {
-    const mainTitle = useSelector((state:AppState) => state.createPostReducer.title);
-    const mainImage = useSelector((state:AppState) => state.createPostReducer.image);
-    const mainDataYearFrom = useSelector((state:AppState) => state.createPostReducer.dataYearFrom);
-    const mainDataYearTo = useSelector((state:AppState) => state.createPostReducer.dataYearTo);
-
-    const convertTextStyle = (style: IStyleData) => {
+const ContentPost = () => {
+    const params = useParams();
+    const dataPost = useSelector((state:AppState) => state.postCatalogReducer.catalogPostData.filter(i => i.id === params['id']));
+    const convertTextStyle = (style?: IStyleData) => {
         const styles: StyleText = {};
-        if(style.bold){
+        if(style?.bold){
             styles.fontWeight = 'bold';
         }
 
-        if(style.italic){
+        if(style?.italic){
             styles.fontStyle = 'italic';
         }
 
-        if(style.fontSize){
+        if(style?.fontSize){
             styles.fontSize = style.fontSize;
         }
 
@@ -73,46 +71,43 @@ const ShowContent = ({ dataText }) => {
     return(
         <ContentWrapper>
             <MainDataWrapper>
-                <img src={mainImage}/>
+                <img src={dataPost[0].image}/>
                 <TitleWrapper>
-                <h1>{mainTitle}</h1>
-                <p>{`${mainDataYearFrom} - ${mainDataYearTo}`}</p>
+                <h1>{dataPost[0].title}</h1>
+                <p>{`${dataPost[0].dataYearFrom} - ${dataPost[0].dataYearTo}`}</p>
                 </TitleWrapper>
-               
+                <button>save</button>
             </MainDataWrapper>
              {
-                dataText.map((item) => {
+                dataPost[0].dataText.map((item: IDataText) => {
                     if(item.type === 'text'){   
                         return generateText(item);
                     }
-
                     if(item.type === 'list'){
                         return(
                             <>
                                 <span style={convertTextStyle(item.style)}>{item.title}</span>
                                 {
-                                    item.style.typeList === 'numbers' && item.value !== '' && (
+                                    item?.style?.typeList === 'numbers' && item.value !== '' && (
                                         <ol style={convertListStyle(item.style)}>
                                             {item.value.split('|||').map((el) => (<li>{el}</li>))}
                                         </ol>
                                     )
                                 }
                                 {
-                                    item.style.typeList === 'point' && item.value !== ''  && (
+                                    item?.style?.typeList === 'point' && item.value !== ''  && (
                                         <ul style={convertListStyle(item.style)}>
                                             {item.value.split('|||').map((el) => (<li>{el}</li>))}
                                         </ul>
                                     )
                                 }
                                 {
-                                    item.style.typeList === 'emptyPoint' && item.value !== ''  && (
+                                    item?.style?.typeList === 'emptyPoint' && item.value !== ''  && (
                                         <ul style={convertListStyle(item.style, 'circle')}>
                                             {item.value.split('|||').map((el) => (<li>{el}</li>))}
                                         </ul>
                                     )
                                 }
-                                
-                               
                             </>
                         )
                     }
@@ -125,4 +120,5 @@ const ShowContent = ({ dataText }) => {
     )
 }
 
-export default ShowContent;
+export default ContentPost;
+
