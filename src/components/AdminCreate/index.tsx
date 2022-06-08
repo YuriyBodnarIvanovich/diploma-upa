@@ -24,7 +24,7 @@ const AdminCreate = () => {
 
     const dispatch = useDispatch();
 
-    const [ dataSubmit, setDataSubmit ] = useState<IData>({title:'', image: '', dataYearFrom:'', dataYearTo:''});
+    const [ dataSubmit, setDataSubmit ] = useState<IData>({title:'УПА-Захід', image: 'https://www.istpravda.com.ua/images/doc/1/6/1671650-----------.9.jpg', dataYearFrom:'1917', dataYearTo:'1943'});
     const [ step, setStep ] = useState<number>(0);
 
     const handleData = (e, keyField) => {

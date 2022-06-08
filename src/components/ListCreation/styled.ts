@@ -13,6 +13,8 @@ export const ListWrapper = styled.div`
 export const InputWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    background: white;
+
 `;
 
 export const ButtonsWrapper = styled.div`

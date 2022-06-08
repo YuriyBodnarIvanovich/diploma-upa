@@ -11,14 +11,18 @@ export const Content = () => {
     const [ yearRange, setYearRange ] = useState<number>(1917)
     const postsData = useSelector((state:AppState) => state.postCatalogReducer.catalogPostData);
     const peopleData = useSelector((state:AppState) => state.postCatalogReducer.catalogPeople);
-    const secondPostData = useSelector((state:AppState) => state.postCatalogReducer.catalogPostData);
 
+    const handleFilterByRange = (yaerFrom: string, yearTo: string) => {
+        return +yaerFrom <= yearRange && +yearTo >= yearRange;
+    }
+
+    console.log('postsData', postsData);
 
     return(
         <ContentWrapper>
             <InfoWrapper>
                 <MainEvents>
-                    {postsData.map((item) => (
+                    {postsData.filter(i => handleFilterByRange(i.dataYearFrom, i.dataYearTo)).map((item) => (
                         <PostBox 
                             id={item.id}
                             img={item.image} 
@@ -29,7 +33,7 @@ export const Content = () => {
                     ))}
                 </MainEvents>
                 <PostsWrapper>
-                    {peopleData.map((item) => (
+                    {peopleData.filter(i => handleFilterByRange(i.dataYearFrom, i.dataYearTo)).map((item) => (
                          <PostBox 
                          id={item.id}
                          img={item.image} 
@@ -44,7 +48,6 @@ export const Content = () => {
                 <Title>{yearRange}</Title>
                 <RangeComponent changeRange={setYearRange} yearRange={yearRange}/>
             </BottomTools>
-            <Footer/>
         </ContentWrapper>
     )
 }

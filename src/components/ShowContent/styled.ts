@@ -11,6 +11,8 @@ export const ContentWrapper = styled.div`
     padding: 20px 40px 20px 40px;
     text-align: left;
     // margin-bottom: 519px;
+    background: white;
+
 `;
 
 export const MainDataWrapper = styled.div`

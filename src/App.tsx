@@ -10,6 +10,7 @@ import RegistrationForm from './components/Registration/LoginForm';
 import ContentPost from './components/ContentPost';
 import axios from 'axios';
 import UserPage from './components/UserPage';
+import { Footer } from './components/Footer';
 
 function App() {
   const history = useHistory();
@@ -43,6 +44,7 @@ function App() {
           <Route path={'/user-page'} component={UserPage} exact />
         </Switch>
       </div>
+      <Footer/>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { ICreatePost } from './types';
 export const mockPosts:ICreatePost[] = [
     {
         id: '1290ie1',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -42,9 +43,10 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290ie2',
+        idAuthor: '12213213d',
         title:"УПА та лісові брати",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ruda_R%C3%B3%C5%BCaniecka_1945.jpg/440px-Ruda_R%C3%B3%C5%BCaniecka_1945.jpg",
-        dataYearFrom:"1953",
+        dataYearFrom:"1928",
         dataYearTo:"1945",
         dataText: [
             {
@@ -81,6 +83,7 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290ie3',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -120,6 +123,7 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290ie4',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -159,6 +163,7 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290ie4',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -198,6 +203,7 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290ie5',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -236,6 +242,7 @@ export const mockPosts:ICreatePost[] = [
         ]
     },
     {id: '1290ie7',
+    idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -275,6 +282,7 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290ie8',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -314,6 +322,7 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290ie9',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -353,6 +362,7 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290i10',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -392,6 +402,7 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290i11',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -431,6 +442,7 @@ export const mockPosts:ICreatePost[] = [
     },
     {
         id: '1290i12',
+        idAuthor: '12213213d',
         title:"Українська повстанська армія",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg/600px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B8%D0%B9_%D0%A5%D1%80%D0%B5%D1%81%D1%82_%D0%91%D0%BE%D0%B9%D0%BE%D0%B2%D0%BE%D1%97_%D0%97%D0%B0%D1%81%D0%BB%D1%83%D0%B3%D0%B8_%D0%A3%D0%9F%D0%90.svg.png",
         dataYearFrom:"1942",
@@ -473,6 +485,7 @@ export const mockPosts:ICreatePost[] = [
 export const mockPeople:ICreatePost[] = [
     {
         id: '1290ie1',
+        idAuthor: '12213213d',
         title:"Степан Бандера",
         image:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/SBandera.jpg/250px-SBandera.jpg",
         dataYearFrom:"1909",
@@ -512,6 +525,7 @@ export const mockPeople:ICreatePost[] = [
     },
     {
         id: '1290ie3',
+        idAuthor: '12213213d',
         title:"Кордюк Богдан",
         image:"https://upload.wikimedia.org/wikipedia/uk/4/48/%D0%91%D0%BE%D0%B3%D0%B4%D0%B0%D0%BD_%D0%9A%D0%BE%D1%80%D0%B4%D1%8E%D0%BA.JPG",
         dataYearFrom:"1910",
@@ -551,6 +565,7 @@ export const mockPeople:ICreatePost[] = [
     },
     {
         id: '1290ie3',
+        idAuthor: '12213213d',
         title:"Роман Ільницький",
         image:"https://upload.wikimedia.org/wikipedia/uk/b/b2/Ilnytskyj.jpg",
         dataYearFrom:"1957",

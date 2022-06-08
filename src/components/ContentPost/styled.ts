@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const ContentWrapper = styled.div`
     width: 100%;
+    min-height: 70vh;
+    margin: 100px 0 100px 0;
     box-sizing: border-box;
     border-radius: 15px;
     -moz-box-shadow: 0 0 15px #ccc;

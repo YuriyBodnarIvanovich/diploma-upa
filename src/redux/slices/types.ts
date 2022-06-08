@@ -1,5 +1,8 @@
 export interface ICreatePost {
     id: string;
+    idAuthor: string;
+    idQuestionnare?: string;
+
     title: string;
     image: string;
     dataYearFrom: string;

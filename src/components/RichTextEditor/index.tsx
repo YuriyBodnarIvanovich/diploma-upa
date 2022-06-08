@@ -7,11 +7,17 @@ import ToolsAdmin from "../ToolsAdmin";
 import { IDataText, IEditMode } from "./types";
 import { RichTextEditorWrapper, SaveButton } from "./styled";
 import ButtonComponent from "../Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setInitialDataText } from '../../redux/slices/createPostSlice';
 import { useHistory } from "react-router-dom";
+import { setInitialData } from "../../redux/slices/postsCatalogSlice";
+import { AppState } from "../../redux/store";
 
 const RichTextEditor = () => {
+    const mainTitle = useSelector((state:AppState) => state.createPostReducer.title);
+    const mainImage = useSelector((state:AppState) => state.createPostReducer.image);
+    const mainDataYearFrom = useSelector((state:AppState) => state.createPostReducer.dataYearFrom);
+    const mainDataYearTo = useSelector((state:AppState) => state.createPostReducer.dataYearTo);
 
     const [ dataText, setDataText ] = useState<IDataText[]>([]);
     const [ addNewItem, setNewItem ] = useState<IEditMode>({type: 'text', status: false});
@@ -22,8 +28,16 @@ const RichTextEditor = () => {
 
     const handleSave = () => {
         dispatch(setInitialDataText(dataText));
+        dispatch(setInitialData({
+            id: 'wdnkqwndkj',
+            idAuthor: '1221',
+            title: mainTitle,
+            image: mainImage,
+            dataYearFrom: mainDataYearFrom,
+            dataYearTo: mainDataYearTo,
+            dataText:dataText 
+        }));
         history.push('/')
-
     };
     
 

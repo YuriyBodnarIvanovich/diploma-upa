@@ -50,7 +50,6 @@ export const PostsBox = styled.div`
     height: 200px;
     margin-bottom: 15px;
     background: rgba(255, 255, 255, .8);
-    // box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
     border: 0.5px solid black;
     border-radius: 10px;
 
@@ -71,7 +70,7 @@ export const BottomTools = styled.div`
     height: 120px;
     position: fixed;
     bottom: 0;
-    background-image: linear-gradient(114.67196031231879deg, rgba(243, 249, 108,1) 5.736111111111111%,rgba(210, 173, 25,1) 96.29166666666666%);
+    background: white;
     z-index: 1;
     left: 0;
     box-shadow: 0px 8px 24px rgba(52, 54, 67, 0.2);

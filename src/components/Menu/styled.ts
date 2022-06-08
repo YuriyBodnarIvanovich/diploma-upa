@@ -9,7 +9,7 @@ export const MenuWrapper = styled.div`
 
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 2px yellow;
+    border-bottom: solid 2px #403F3F;
     padding: 0px 0 10px 0;
     postion: relative;
     box-sizing: border-box;
@@ -26,8 +26,6 @@ export const LogoImg = styled.div`
         width: 100px;
         height: 100px;
     }
-   
-
 `;
 
 
@@ -40,7 +38,7 @@ export const LinksWrapper = styled.div`
         display: block;
         text-decoration: none;
         font-size: 22px;
-        color: white;
+        color: #403F3F;
         font-weight: bold;
         margin: 0;
         margin-top: 40px;
@@ -70,7 +68,7 @@ export const AvatarBox = styled.div`
     p{
         margin-left: 20px;
         font-size: 22px;
-        color: white;
+        color: #403F3F;
         font-weight: bold;
     }
 
@@ -126,19 +124,19 @@ export const SearchContainer = styled.div`
         background: rgba(0, 0, 0, 0);
         outline: none;
         border: none;
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid #403F3F;
         font-size: 28px;
-        color: white;
+        color: #403F3F;
         
         &::placeholder{
-            color: white;
+            color: #403F3F;
         }
 
     }
     p{
         margin-top: 15px;
         padding: 0 40px 0 0px;
-        color: white;
+        color: #403F3F;
         font-size: 22px;
         font-weight: bold;
         cursor: pointer;

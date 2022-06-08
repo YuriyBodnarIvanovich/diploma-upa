@@ -14,7 +14,7 @@ export const calatogPosttSlice = createSlice({
     initialState,
     reducers: {
         setInitialData: (state, action) => {
-            state.catalogPostData = action.payload;
+            state.catalogPostData = [...state.catalogPostData, action.payload];
         },
         setPost: (state, action) => {
             state.catalogPostData = [...state.catalogPostData,  action.payload];

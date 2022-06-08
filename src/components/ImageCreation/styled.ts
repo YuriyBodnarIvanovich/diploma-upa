@@ -10,6 +10,8 @@ export const ImageWrapper = styled.div`
     right: 10px;
     textarea {
         font-size: 18px;
+        background: white;
+
     }
 
 `;
