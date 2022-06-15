@@ -5,7 +5,7 @@ import ShowContent from "../ShowContent";
 import TextCreation from "../TextCreation";
 import ToolsAdmin from "../ToolsAdmin";
 import { IDataText, IEditMode } from "./types";
-import { RichTextEditorWrapper, SaveButton } from "./styled";
+import { RichTextEditorWrapper } from "./styled";
 import ButtonComponent from "../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { setInitialDataText } from '../../redux/slices/createPostSlice';

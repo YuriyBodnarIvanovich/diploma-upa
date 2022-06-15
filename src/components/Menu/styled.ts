@@ -45,11 +45,10 @@ export const LinksWrapper = styled.div`
 
     }
     margin-left: 70px;
-
 `;
 
 export const LoginPart = styled.div`
-    width: 200px;
+    width: 250px;
     height: 100px;
 `;
 
@@ -71,7 +70,6 @@ export const AvatarBox = styled.div`
         color: #403F3F;
         font-weight: bold;
     }
-
 `;
 
 export const DropMenu = styled.div`
@@ -86,6 +84,7 @@ export const DropMenu = styled.div`
     box-sizing: border-box;
     z-index: 100;
     top: 80px;
+
     p{
         height: 0px;
         cursor: pointer;
@@ -93,6 +92,7 @@ export const DropMenu = styled.div`
         font-weight: bold;
         color: black;
     }
+
     a{
         width: 150px;
         display: block;
@@ -103,6 +103,7 @@ export const DropMenu = styled.div`
         padding: 20px 0 0 20px;
         cursor: pounter;
     }
+
     span{
         margin-top: 15px;
         padding: 0 0 0 20px;
@@ -118,6 +119,7 @@ export const SearchContainer = styled.div`
     height: 100px;
     padding: 25px 0 0 100px;
     display: flex;
+
     input{
         width: 400px;
         height: 40px;
@@ -131,8 +133,8 @@ export const SearchContainer = styled.div`
         &::placeholder{
             color: #403F3F;
         }
-
     }
+
     p{
         margin-top: 15px;
         padding: 0 40px 0 0px;
@@ -141,5 +143,4 @@ export const SearchContainer = styled.div`
         font-weight: bold;
         cursor: pointer;
     }
-
 `;

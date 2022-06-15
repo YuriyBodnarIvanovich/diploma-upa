@@ -1,7 +1,5 @@
-import axios from 'axios';
-import React, {useState} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
-import { useHistory } from "react-router-dom";
 
 import {
     AdminFormBlock,
@@ -14,11 +12,6 @@ import {
 } from './styled';
 
 const LoginForm: React.FC = () => {
-  const history = useHistory();
-
-  const handleRegitration = () => {
-      history.push('/regitration')
-  };
 
   return (
     // <LoginWrapper>

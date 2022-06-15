@@ -25,17 +25,25 @@ export const MainDataWrapper = styled.div`
     }  
 
     button{
-        width: 100px;
-        height:50px;
+        width: auto;
+        height:auto;
         background: #F27A26;
         color: white;
         border-radius: 20px;
         border: none;
         font-size: 28px;
-        position: absolute;
-        right: 20px;
+        padding: 15px;
         cursor: pointer;
+        margin-left: 10px;
     }
+`;
+
+export const ToolAction = styled.div`
+    width: 580px;
+    position: absolute;
+    right: 20px;
+    display: flex;
+
 `;
 
 export const TitleWrapper = styled.div`

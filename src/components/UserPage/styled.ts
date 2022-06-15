@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const UserPageWrapper = styled.div`
     width: 100%;
     heigth: auto;
+    min-height: 80vh;
     display: flex;
     justify-content: space-between;
     padding-top: 50px;
 `;
 
 export const UserInfoBox = styled.div`
-    // border: 2px solid black;
     padding: 20px;
     width: 600px;
     height: 320px;

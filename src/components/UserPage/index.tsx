@@ -1,3 +1,4 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
@@ -7,14 +8,16 @@ import { MainEvents, UserInfoBox, UserPageWrapper } from "./styled";
 const UserPage = () => {
 
     const userData = useSelector((state:AppState) => state.userDataRedicer);
+    const { user } = useAuth0();
 
     return(
         <UserPageWrapper>
             <UserInfoBox>
                 <h2>User Info:</h2>
-                <img src={userData.avatarPhoto}/>
-                <p>{'Name: ' + userData.name}</p>
-                <p>{'Login: ' + userData.login}</p>
+                <img src={user?.picture}/>
+                <p>{'Name: ' + user?.given_name}</p>
+                <p>{'Surname: ' + user?.family_name}</p>
+                <p>{'Login: ' + user?.email}</p>
             </UserInfoBox>
             <MainEvents>
                 <h2>User save posts:</h2>

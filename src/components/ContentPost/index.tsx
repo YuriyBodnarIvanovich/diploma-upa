@@ -3,16 +3,20 @@ import { useSelector } from "react-redux";
 import { IDataText, IStyleData, StyleText } from "../RichTextEditor/types";
 import { AppState } from '../../redux/store';
 import {useParams} from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 import { 
     ContentWrapper, 
     MainDataWrapper,
-    TitleWrapper
+    TitleWrapper,
+    ToolAction
 } from "./styled";
 
 const ContentPost = () => {
     const params = useParams();
     const dataPost = useSelector((state:AppState) => state.postCatalogReducer.catalogPostData.filter(i => i.id === params['id']));
+    const history = useHistory();
+
     const convertTextStyle = (style?: IStyleData) => {
         const styles: StyleText = {};
         if(style?.bold){
@@ -68,6 +72,12 @@ const ContentPost = () => {
         )
     }
 
+    const handleRedirect = (url: string) => {
+        return () => {
+            history.push(url);
+        }
+    }
+
     return(
         <ContentWrapper>
             <MainDataWrapper>
@@ -76,7 +86,11 @@ const ContentPost = () => {
                 <h1>{dataPost[0].title}</h1>
                 <p>{`${dataPost[0].dataYearFrom} - ${dataPost[0].dataYearTo}`}</p>
                 </TitleWrapper>
-                <button>save</button>
+                <ToolAction>
+                    <button onClick={handleRedirect('/create-question')}>create question</button>
+                    <button>pass the survey</button>
+                    <button>save</button>
+                </ToolAction>
             </MainDataWrapper>
              {
                 dataPost[0].dataText.map((item: IDataText) => {

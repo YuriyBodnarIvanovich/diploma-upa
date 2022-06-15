@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ButtonComponent from "../Button";
 import InputComponent from "../Input";
 import { AdminCreateWrapper, ModalWindow } from "./styled";
-import { Route, Switch, useLocation, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setMainDataPost } from '../../redux/slices/createPostSlice';
 interface IData {
@@ -41,7 +41,6 @@ const AdminCreate = () => {
 
     useEffect(() => {
         if(checkProperties(dataSubmit)){
-            console.log('hello', dataSubmit)
             dispatch(setMainDataPost(dataSubmit));
         }         
     }, [step]);

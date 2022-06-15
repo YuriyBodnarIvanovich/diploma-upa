@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../redux/store';
-import { Footer } from '../Footer';
 import { RangeComponent } from '../Range';
 import PostBox from './PostBox/index';
-import { BottomTools, ContentWrapper, InfoWrapper, MainEvents, PostPeopleBox, PostsBox, PostsWrapper, Title } from './styled';
+import { BottomTools, ContentWrapper, InfoWrapper, MainEvents, PostsWrapper, Title } from './styled';
 
 
 export const Content = () => {

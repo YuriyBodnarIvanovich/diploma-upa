@@ -1,39 +1,24 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { MenuWrapper, LogoImg, LoginPart, LinksWrapper, AvatarBox, DropMenu, SearchContainer } from './styled';
 import { NavLink } from 'react-router-dom';
 import ButtonComponent from '../Button';
-import { useHistory } from "react-router-dom";
-import axios from "axios";
 import ukraineIcon from './ukraine.png'
+import { useAuth0 } from "@auth0/auth0-react";
+
 export const Menu = ({admin = false, name = '', avatar = ''}) => {
 
+    const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
+
     const searchTypeData = [ 'Author', 'Post' ];
-    const [ authSatatus, setAuthStatus ] = useState<boolean>(true);
     const [ showDropDownSearch, setStatusOfDropDownSearch ] = useState<boolean>(false);
 
     const [ showDropDown, setStatusOfDropDown ] = useState<boolean>(false);
     const [ searchType, setSearchType ] = useState<number>(0);
 
-    const history = useHistory();
-
     const handleLogin = () => {
-        history.push('/login')
+        loginWithRedirect();
     };
 
-    // const  checkJWT = useCallback(() => {
-    //     axios.post('http://localhost:3001/checkJWT', {
-    //     }, {headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`}})
-    //         .then((r) => {
-    //             setAuthStatus(true)
-    //         })
-    //         .catch(function (error) {
-    //             setAuthStatus(false)
-    //         });
-    // },[])
-    
-    // useEffect(() => {
-    //   checkJWT();
-    // }, []);
     const handleChageTypeSearch = (index: number) => {
         return () => {
             setSearchType(index);
@@ -71,17 +56,17 @@ export const Menu = ({admin = false, name = '', avatar = ''}) => {
             </LogoImg>
             <LoginPart>
                 {
-                    authSatatus ? (
+                    isAuthenticated ? (
                        <>
                             <AvatarBox>
-                                <img src={avatar} onClick={() => setStatusOfDropDown(prev => !prev)}/>
-                                <p>{name}</p>
+                                <img src={user?.picture} onClick={() => setStatusOfDropDown(prev => !prev)}/>
+                                <p>{user?.given_name + ' ' +user?.family_name}</p>
                                 {showDropDown && (
                                     <DropMenu>
                                         <NavLink to={'/user-page'}>
                                             User page
                                         </NavLink>
-                                        <p>Logout</p>
+                                        <p onClick={() => logout({ returnTo: window.location.origin })}>Logout</p>
                                     </DropMenu>
                                 )}
                             </AvatarBox>

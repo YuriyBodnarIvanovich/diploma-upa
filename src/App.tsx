@@ -1,34 +1,18 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 import { Menu } from './components/Menu';
 import { Content } from './components/Content';
 import RichTextEditor from './components/RichTextEditor';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AdminCreate from './components/AdminCreate';
 import LoginForm from './components/LoginForm/LoginForm';
 import RegistrationForm from './components/Registration/LoginForm';
 import ContentPost from './components/ContentPost';
-import axios from 'axios';
 import UserPage from './components/UserPage';
 import { Footer } from './components/Footer';
+import CreateQuestion from './components/CreateQuestion';
 
 function App() {
-  const history = useHistory();
-
-  const  checkJWT = useCallback(() => {
-      axios.post('http://localhost:3001/checkJWT', {
-      }, {headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`}})
-          .then((r) => {
-             console.log('user auth') 
-          })
-          .catch(function (error) {
-            history.push('/login')
-          });
-  },[])
-  
-  // useEffect(() => {
-  //   checkJWT();
-  // }, []);
   
   return (
     <div className='App'>
@@ -39,6 +23,7 @@ function App() {
           <Route path={'/admin/create'} component={AdminCreate} exact/>
           <Route path={'/admin/create/post'} component={RichTextEditor} exact />
           <Route path={'/post/:id'} component={ContentPost} exact />
+          <Route path={'/create-question'} component={CreateQuestion} exact />
           <Route path={'/login'} component={LoginForm} exact />
           <Route path={'/regitration'} component={RegistrationForm} exact />
           <Route path={'/user-page'} component={UserPage} exact />
