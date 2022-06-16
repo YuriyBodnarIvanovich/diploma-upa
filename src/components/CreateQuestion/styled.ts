@@ -4,7 +4,7 @@ export const CreateQuestionWrapper = styled.div`
     width: 100%;
     height: auto;
     min-height: 80vh;
-    padding: 30px;
+    padding: 30px 30px 300px 30px;
     input[type=text]{
         width: 800px;
         height: 40px;
@@ -42,6 +42,9 @@ export const CreateQuestionWrapper = styled.div`
         cursor: pointer;
         margin-left: 30px;
     }
+    h1{
+        margin-top: 100px;
+    }
 `;
 
 export const InputWrapper = styled.div`
@@ -49,6 +52,7 @@ export const InputWrapper = styled.div`
     height: 80px;
     display: flex;
     // justify-content: space-between;
+    margin-top: 50px;
     p{
         margin-top: 15px;
         padding: 0 40px 0 0px;
@@ -60,9 +64,9 @@ export const InputWrapper = styled.div`
     button{
         width: 80px;
         height:50px;
-        background: #F27A26;
+        background: red;
         color: white;
-        border-radius: 20px;
+        border-radius: 5px;
         border: none;
         font-size: 16px;
         padding: 15px;
@@ -72,3 +76,19 @@ export const InputWrapper = styled.div`
 
 `;
 
+export const AnswerBox = styled.div`
+    width: 100%;
+    padding: 25px 0 0 40px;
+`;
+
+export const ButtonAddNew = styled.button`
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0 0 0 40px;
+`;
+
+export const ButtonAddNewQuestion = styled.button`
+    font-weight: bold;
+    font-size: 22px;
+    margin: 50px 0 0 0;
+`;

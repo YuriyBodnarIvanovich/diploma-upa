@@ -13,7 +13,7 @@ interface IData {
 }
 
 const dataField = ['title', 'image', 'dataYearFrom', 'dataYearTo'];
-const dataPlaysholder = [
+const dataPlaysHolder = [
     'Please input title...',
     'Please input url of image...',
     'Please input data from Event...',
@@ -21,7 +21,7 @@ const dataPlaysholder = [
 ]
 
 const AdminCreate = () => {
-
+    
     const dispatch = useDispatch();
 
     const [ dataSubmit, setDataSubmit ] = useState<IData>({title:'УПА-Захід', image: 'https://www.istpravda.com.ua/images/doc/1/6/1671650-----------.9.jpg', dataYearFrom:'1917', dataYearTo:'1943'});
@@ -51,7 +51,7 @@ const AdminCreate = () => {
                 <InputComponent 
                     name='data' 
                     value={dataSubmit[dataField[step]]} 
-                    $placeholder={dataPlaysholder[step]}
+                    $placeholder={dataPlaysHolder[step]}
                     onChange={(e) => handleData(e, dataField[step])}
                     $width='600px'
                     $height='40px'
