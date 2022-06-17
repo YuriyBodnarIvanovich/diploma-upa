@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setQuestions } from "../../redux/slices/createQuestions";
 import { AppState } from "../../redux/store";
 import { AnswersShow } from "./AnswerShow";
-import JSONData from '../../mockJSON/questions.json';
 import {useParams} from "react-router-dom";
 import { setQuestionPost } from "../../redux/slices/questionsSlice";
+import { useHistory } from "react-router-dom";
 import { CreateQuestionWrapper, InputWrapper, AnswerBox, ButtonAddNewQuestion } from "./styled";
 
 const CreateQuestion = () => {
@@ -13,6 +13,7 @@ const CreateQuestion = () => {
     const questionPostData = useSelector((state:AppState) => state.questionPosts.questionPostData);
     const dispatch = useDispatch();
     const params = useParams();
+    const history = useHistory();
     const handleAnswers = (idQuestion) => {
         return (data, idAnswer, type) => {
             const dataQuestionCopy = JSON.parse(JSON.stringify(questionData));
@@ -50,10 +51,12 @@ const CreateQuestion = () => {
     const handleSave = () => {
         const questionPostDataCopy = JSON.parse(JSON.stringify(questionPostData));
         questionPostDataCopy.push({
+            id: `${new Date().valueOf()}`,
             postId: params['id'],
-            questions: questionData
+            questions: questionData,
         })
-        dispatch(setQuestionPost(questionPostDataCopy))
+        dispatch(setQuestionPost(questionPostDataCopy));
+        history.push(`/post/${params['id']}`)
     }
 
     return(

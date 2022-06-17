@@ -39,14 +39,12 @@ export const MainDataWrapper = styled.div`
 `;
 
 export const ToolAction = styled.div`
-    width: 580px;
+    width: 370px;
     position: absolute;
-    right: 20px;
+    right: 0px;
     display: flex;
-
 `;
 
 export const TitleWrapper = styled.div`
     padding: 10px 10px 10px 30px;
-
 `;

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { IDataText, IStyleData, StyleText } from "../RichTextEditor/types";
 import { AppState } from '../../redux/store';
 import {useParams} from "react-router-dom";
 import { useHistory } from 'react-router-dom';
+import { IDataText, IStyleData, StyleText } from "../RichTextEditor/types";
 
 import { 
     ContentWrapper, 
@@ -14,8 +14,17 @@ import {
 
 const ContentPost = () => {
     const params = useParams();
-    const dataPost = useSelector((state:AppState) => state.postCatalogReducer.catalogPostData.filter(i => i.id === params['id']));
     const history = useHistory();
+    const dataPost = useSelector((state:AppState) => state.postCatalogReducer.catalogPostData.filter(i => i.id === params['id']));
+    const questionPostData = useSelector((state:AppState) => state.questionPosts.questionPostData);
+    const [ statusOfQuestion, setStatusOfQuestion ] = useState(false);
+
+    useEffect(() => {
+        if(questionPostData.some(i => i.questionData?.postId ===  params['id'])){
+            setStatusOfQuestion(true);
+        }
+    }, [questionPostData]);
+
 
     const convertTextStyle = (style?: IStyleData) => {
         const styles: StyleText = {};
@@ -78,6 +87,9 @@ const ContentPost = () => {
         }
     }
 
+
+    //createQuestionPostSlice
+
     return(
         <ContentWrapper>
             <MainDataWrapper>
@@ -87,10 +99,15 @@ const ContentPost = () => {
                 <p>{`${dataPost[0].dataYearFrom} - ${dataPost[0].dataYearTo}`}</p>
                 </TitleWrapper>
                 <ToolAction>
-                    <button onClick={handleRedirect(`/create-question/${dataPost[0].id}`)}>
-                        create question
-                    </button>
-                    <button>pass the survey</button>
+                    {
+                        statusOfQuestion ? (
+                            <button>pass the survey</button>
+                        ) : (
+                            <button onClick={handleRedirect(`/create-question/${dataPost[0].id}`)}>
+                                create question
+                            </button>
+                        )
+                    }
                     <button>save</button>
                 </ToolAction>
             </MainDataWrapper>

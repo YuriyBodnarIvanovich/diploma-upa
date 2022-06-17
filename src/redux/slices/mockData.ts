@@ -604,4 +604,56 @@ export const mockPeople:ICreatePost[] = [
         ]
     },
     
+];
+
+/// questions-----------------------------------------------------
+/// questions-----------------------------------------------------
+/// questions-----------------------------------------------------
+/// questions-----------------------------------------------------
+/// questions-----------------------------------------------------
+
+
+export const questionPostDataMock = [
+    {
+        questionData: {
+            id: 'emflkemflkemlkf23',
+            postId: '1290ie3',
+            questions: [
+                {
+                    textOfQuestion: 'Хто такий Роман Ільницький?',
+                    answers: [
+                        {
+                            text: 'учасник бойових дій',
+                            answer: false,
+                        },
+                        {
+                            text: 'полковник',
+                            answer: false,
+                        },
+                        {
+                            text: 'громадський діяч',
+                            answer: true,
+                        }
+                    ]
+                },
+                {
+                    textOfQuestion: 'Родом із',
+                    answers: [
+                        {
+                            text: 'Львова',
+                            answer: false,
+                        },
+                        {
+                            text: 'Станіславова',
+                            answer: true,
+                        },
+                        {
+                            text: 'Закарпаття',
+                            answer: false,
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 ]

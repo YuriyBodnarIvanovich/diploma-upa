@@ -1,28 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { questionPostDataMock } from "./mockData";
 
 const initialState = {
-    questionPostData: [
-        {
-            questionData: {
-                postId: '',
-                questions: [
-                    {
-                        textOfQuestion: '',
-                        answers: [
-                            {
-                                text: '',
-                                answer: false,
-                            },
-                            {
-                                text: '',
-                                answer: false,
-                            }
-                        ]
-                    }
-                ]
-            }
-        }
-    ]
+    questionPostData: questionPostDataMock,
 }
 
 export const createQuestionPostSlice = createSlice({
