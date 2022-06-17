@@ -23,7 +23,7 @@ function App() {
           <Route path={'/admin/create'} component={AdminCreate} exact/>
           <Route path={'/admin/create/post'} component={RichTextEditor} exact />
           <Route path={'/post/:id'} component={ContentPost} exact />
-          <Route path={'/create-question'} component={CreateQuestion} exact />
+          <Route path={'/create-question/:id'} component={CreateQuestion} exact />
           <Route path={'/login'} component={LoginForm} exact />
           <Route path={'/regitration'} component={RegistrationForm} exact />
           <Route path={'/user-page'} component={UserPage} exact />

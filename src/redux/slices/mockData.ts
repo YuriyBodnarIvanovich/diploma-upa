@@ -568,7 +568,7 @@ export const mockPeople:ICreatePost[] = [
         idAuthor: '12213213d',
         title:"Роман Ільницький",
         image:"https://upload.wikimedia.org/wikipedia/uk/b/b2/Ilnytskyj.jpg",
-        dataYearFrom:"1957",
+        dataYearFrom:"1953",
         dataYearTo:"1972",
         dataText: [
             {

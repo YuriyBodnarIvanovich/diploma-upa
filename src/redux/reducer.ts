@@ -4,6 +4,7 @@ import { createPostSlice } from './slices/createPostSlice';
 import { calatogPosttSlice } from "./slices/postsCatalogSlice";
 import { UserDataSlice } from "./slices/userDataSlice";
 import { createQuestions } from "./slices/createQuestions";
+import { createQuestionPostSlice } from "./slices/questionsSlice";
 
 export const appReducers = combineReducers({
     eventsReducer: eventsSlice.reducer,
@@ -11,4 +12,5 @@ export const appReducers = combineReducers({
     postCatalogReducer: calatogPosttSlice.reducer,
     userDataRedicer: UserDataSlice.reducer,
     createQuestionsReducer: createQuestions.reducer,
+    questionPosts: createQuestionPostSlice.reducer
 });

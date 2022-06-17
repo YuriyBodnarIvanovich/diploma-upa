@@ -1,0 +1,6 @@
+{
+    "questionData":{
+        "postId": "",
+        "questions": [{"textOfQuestion":"hello1","answers":[{"text":"JSON","answer":true},{"text":"h3","answer":false}]}]
+    }
+}

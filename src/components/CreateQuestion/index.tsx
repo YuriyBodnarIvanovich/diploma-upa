@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { setQuestions } from "../../redux/slices/createQuestions";
 import { AppState } from "../../redux/store";
 import { AnswersShow } from "./AnswerShow";
+import JSONData from '../../mockJSON/questions.json';
+import {useParams} from "react-router-dom";
+import { setQuestionPost } from "../../redux/slices/questionsSlice";
 import { CreateQuestionWrapper, InputWrapper, AnswerBox, ButtonAddNewQuestion } from "./styled";
 
 const CreateQuestion = () => {
     const questionData = useSelector((state:AppState) => state.createQuestionsReducer.questions);
+    const questionPostData = useSelector((state:AppState) => state.questionPosts.questionPostData);
     const dispatch = useDispatch();
-
-    console.log(questionData);
-
+    const params = useParams();
     const handleAnswers = (idQuestion) => {
         return (data, idAnswer, type) => {
             const dataQuestionCopy = JSON.parse(JSON.stringify(questionData));
-
             switch(type) {
                 case 'DELETE_ANSWER':
                     dataQuestionCopy[idQuestion].answers =  dataQuestionCopy[idQuestion].answers.filter((_, index) => index !== idAnswer);
@@ -25,7 +26,6 @@ const CreateQuestion = () => {
                 default:
                     console.log('None')
             }
-            
             dispatch(setQuestions(dataQuestionCopy));
         }
     }
@@ -45,6 +45,15 @@ const CreateQuestion = () => {
             ]
         })
         dispatch(setQuestions(dataQuestionCopy));
+    }
+
+    const handleSave = () => {
+        const questionPostDataCopy = JSON.parse(JSON.stringify(questionPostData));
+        questionPostDataCopy.push({
+            postId: params['id'],
+            questions: questionData
+        })
+        dispatch(setQuestionPost(questionPostDataCopy))
     }
 
     return(
@@ -68,6 +77,7 @@ const CreateQuestion = () => {
                 })
             }
             <ButtonAddNewQuestion onClick={handleAddNewQuestion}>add new question</ButtonAddNewQuestion>
+            <ButtonAddNewQuestion onClick={handleSave}>save questions</ButtonAddNewQuestion>
         </CreateQuestionWrapper>
     )
 }

@@ -87,7 +87,9 @@ const ContentPost = () => {
                 <p>{`${dataPost[0].dataYearFrom} - ${dataPost[0].dataYearTo}`}</p>
                 </TitleWrapper>
                 <ToolAction>
-                    <button onClick={handleRedirect('/create-question')}>create question</button>
+                    <button onClick={handleRedirect(`/create-question/${dataPost[0].id}`)}>
+                        create question
+                    </button>
                     <button>pass the survey</button>
                     <button>save</button>
                 </ToolAction>

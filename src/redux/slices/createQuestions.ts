@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+    postId: '',
     questions: [
         {
-            textOfQuestion: 'hello1',
+            textOfQuestion: '',
             answers: [
-                {text:'h2', answer: true},
-                {text:'h3', answer: false},
+                {text:'', answer: true},
+                {text:'', answer: false},
             ]
         },
     ]
